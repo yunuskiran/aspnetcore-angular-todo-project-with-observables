@@ -1,0 +1,23 @@
+<div class="container">
+<h1>ToDos</h1>
+<hr />
+
+<div *ngIf="items" >
+<ul class="list-group" *ngFor="let item of items">
+        <a class="list-group-item clearfix" (click)="DeleteItem(item)">
+                {{item.name}}
+                <span class="pull-right">
+                    <span class="btn btn-xs btn-default">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </span>
+                </span>
+            </a>
+  </ul>
+</div>
+<hr />
+<div class="form-group">
+    <textarea class="form-control" [(ngModel)] ="item.name"  placeholder="Todo item" rows="5"></textarea>
+</div>
+ <button type="submit" class="btn btn-primary btn-block" (click)="AddItem()" >Add</button>
+
+</div>
